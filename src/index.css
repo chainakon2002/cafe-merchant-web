@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FDFBF7;
+  --color-beige: #F4E8DB;
+  --color-beige-active: #F6DDBE;
+  --color-primary: #3E2723;
+  --color-secondary: #D4B895;
+  --color-text-main: #3E2723;
+  --color-text-muted: #8D6E63;
+  --font-sans: 'Inter', 'Outfit', sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-text-main);
+    font-family: var(--font-sans);
+  }
+}
