@@ -348,3 +348,5 @@ export const AddMenuModal = ({ isOpen, onClose, editItem }: AddMenuModalProps) =
     </AnimatePresence>
   );
 };
+
+

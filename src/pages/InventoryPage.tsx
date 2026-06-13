@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { AddMenuModal } from '../components/AddMenuModal';
 import { ConfirmModal } from '../components/ConfirmModal';
 
+
 export const InventoryPage = () => {
   const menu = useStore((state) => state.menu);
   const toggleMenuItem = useStore((state) => state.toggleMenuItem);

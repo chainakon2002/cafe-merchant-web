@@ -11,7 +11,6 @@ export const QRPage = () => {
   
   const createSession = useStore((state) => state.createSession);
 
-  // Customer app URL. In production this would be an env var.
   const CUSTOMER_APP_URL = 'http://localhost:5173';
   const qrValue = sessionId ? `${CUSTOMER_APP_URL}/${sessionId}` : '';
 
@@ -87,6 +86,9 @@ export const QRPage = () => {
             </div>
           )}
         </div>
+
+
+
 
         {/* QR Preview Section - Printed exactly as seen */}
         <div className="flex items-center justify-center print:items-start print:justify-start">

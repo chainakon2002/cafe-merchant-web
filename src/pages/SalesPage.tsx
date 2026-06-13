@@ -9,8 +9,7 @@ export const SalesPage = () => {
 
   // Calculate stats
   const stats = useMemo(() => {
-    // Only count completed/served orders for actual sales? 
-    // Or maybe any non-cancelled order is fine. Let's use all non-cancelled.
+ 
     let validOrders = orders.filter(o => o.status !== 'cancelled');
     
     const now = dayjs();

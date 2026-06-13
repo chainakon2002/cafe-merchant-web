@@ -19,6 +19,7 @@ const Sidebar = () => {
     { name: 'จัดการโต๊ะ', path: '/tables', icon: Receipt },
   ];
 
+  
   return (
     <div className="w-64 bg-white border-r border-gray-200 h-screen fixed left-0 top-0 flex flex-col shadow-sm">
       <div className="p-6">
