@@ -21,7 +21,7 @@ const Sidebar = () => {
 
   
   return (
-    <div className="w-64 bg-white border-r border-gray-200 h-screen fixed left-0 top-0 flex flex-col shadow-sm">
+    <div className="w-64 bg-white border-r border-gray-200 h-screen fixed left-0 top-0 flex flex-col shadow-sm print:hidden">
       <div className="p-6">
         <h1 className="text-2xl font-bold text-primary tracking-tight">Merchant</h1>
         <p className="text-sm text-text-muted mt-1">ระบบจัดการร้านค้า</p>
@@ -58,7 +58,7 @@ function App() {
   return (
     <div className="flex min-h-screen bg-cream">
       <Sidebar />
-      <main className="flex-1 ml-64 p-8">
+      <main className="flex-1 ml-64 p-8 print:ml-0 print:p-0">
         <Routes>
           <Route path="/" element={<Navigate to="/kds" replace />} />
           <Route path="/sales" element={<SalesPage />} />

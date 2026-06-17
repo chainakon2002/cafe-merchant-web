@@ -11,10 +11,10 @@ interface AddMenuModalProps {
 }
 
 const CATEGORIES = [
-  { id: 'c1', name: 'เครื่องดื่มเย็น' },
-  { id: 'c2', name: 'เครื่องดื่มร้อน' },
-  { id: 'c3', name: 'เบเกอรี่' },
-  { id: 'c4', name: 'พิเศษ' },
+  { id: 'c1', name: 'Coffee' },
+  { id: 'c2', name: 'Non-Coffee' },
+  { id: 'c3', name: 'Bakery' },
+  { id: 'c4', name: 'Signature' },
 ];
 
 export const AddMenuModal = ({ isOpen, onClose, editItem }: AddMenuModalProps) => {
@@ -261,30 +261,37 @@ export const AddMenuModal = ({ isOpen, onClose, editItem }: AddMenuModalProps) =
                 />
               </div>
 
-              {/* Price + Category Row */}
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-bold text-primary mb-2">ราคา (฿)</label>
-                  <input
-                    type="number"
-                    value={price}
-                    onChange={(e) => setPrice(e.target.value)}
-                    placeholder="0"
-                    min="0"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none transition-all bg-cream/50 text-primary placeholder:text-text-muted/50 font-medium"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-bold text-primary mb-2">หมวดหมู่</label>
-                  <select
-                    value={categoryId}
-                    onChange={(e) => setCategoryId(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none transition-all bg-cream/50 text-primary font-medium appearance-none cursor-pointer"
-                  >
-                    {CATEGORIES.map(cat => (
-                      <option key={cat.id} value={cat.id}>{cat.name}</option>
-                    ))}
-                  </select>
+              {/* Price */}
+              <div>
+                <label className="block text-sm font-bold text-primary mb-2">ราคา (฿)</label>
+                <input
+                  type="number"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                  placeholder="0"
+                  min="0"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/10 outline-none transition-all bg-cream/50 text-primary placeholder:text-text-muted/50 font-medium"
+                />
+              </div>
+
+              {/* Category Row (Tabs) */}
+              <div>
+                <label className="block text-sm font-bold text-primary mb-2">หมวดหมู่</label>
+                <div className="flex overflow-x-auto no-scrollbar gap-2 pb-1">
+                  {CATEGORIES.map(cat => (
+                    <button
+                      type="button"
+                      key={cat.id}
+                      onClick={() => setCategoryId(cat.id)}
+                      className={`whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
+                        categoryId === cat.id
+                          ? 'bg-beige-active text-primary shadow-sm border border-secondary/20'
+                          : 'bg-transparent text-text-muted hover:bg-cream border border-transparent'
+                      }`}
+                    >
+                      {cat.name}
+                    </button>
+                  ))}
                 </div>
               </div>
 
