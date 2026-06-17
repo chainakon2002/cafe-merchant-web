@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import { motion, AnimatePresence } from 'framer-motion';
 import dayjs from 'dayjs';
-import { Receipt, CheckCircle, Clock, QrCode, X, Printer } from 'lucide-react';
+import { Receipt, CheckCircle, Clock, X, Printer } from 'lucide-react';
 import { useStore } from '../store/useStore';
 
 export const TablesPage = () => {
