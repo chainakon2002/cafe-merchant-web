@@ -11,7 +11,7 @@ export const QRPage = () => {
   
   const createSession = useStore((state) => state.createSession);
 
-  const CUSTOMER_APP_URL = 'http://localhost:5173';
+  const CUSTOMER_APP_URL = import.meta.env.VITE_CUSTOMER_APP_URL || (import.meta.env.DEV ? 'http://localhost:5173' : 'https://cafe-customerm.vercel.app');
   const qrValue = sessionId ? `${CUSTOMER_APP_URL}/${sessionId}` : '';
 
   const handleGenerate = async () => {
